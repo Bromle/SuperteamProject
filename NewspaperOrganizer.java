@@ -1,16 +1,15 @@
-
+import java.util.ArrayList;
 /**
- * A class to hold details of Newspaper.
+ * Write a description of class NewspaperOrganizer here.
  *
- * @author Geir Kvenseth
- * @author Helene Rasmussen 
- * @author Fride Frøland
- * @version 12.02.18
+ * @author (your name)
+ * @version (a version number or a date)
  */
 public class NewspaperOrganizer
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    // An Arraylist for storing objects of class Newspaper.
+    private ArrayList<newsPaper> newsPapers;
+    // 
 
     /**
      * Constructor for objects of class NewspaperOrganizer
