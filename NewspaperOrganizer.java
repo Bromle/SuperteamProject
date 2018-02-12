@@ -1,9 +1,11 @@
 
 /**
- * Write a description of class NewspaperOrganizer here.
+ * A class to hold details of Newspaper.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Geir Kvenseth
+ * @author Helene Rasmussen 
+ * @author Fride Frøland
+ * @version 12.02.18
  */
 public class NewspaperOrganizer
 {
