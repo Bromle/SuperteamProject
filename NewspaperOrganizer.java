@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 /**
  * Write a description of class NewspaperOrganizer here.
  *
@@ -7,8 +7,9 @@
  */
 public class NewspaperOrganizer
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    // An Arraylist for storing objects of class Newspaper.
+    private ArrayList<newsPaper> newsPapers;
+    // 
 
     /**
      * Constructor for objects of class NewspaperOrganizer
