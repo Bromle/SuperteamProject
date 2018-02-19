@@ -35,10 +35,7 @@ public class NewspaperOrganizer
     {
         this.listOfNewsPapers.remove(index);
     }
-    
-    
-    
-    
+       
     /**
      * Find and return the newspaper with a name matching the parameter name.
      * @param name The name of the newspaper to search for.
@@ -51,11 +48,10 @@ public class NewspaperOrganizer
         while ((null == foundNewspaper) && (index < this.listOfNewsPapers.size()))
         {
             Newspaper n = this.listOfNewsPapers.get(index++);
-            if (n.getName().equals(name))
+            if (n.getName().equalsIgnoreCase(name))
             {
                 foundNewspaper = n;  
             }
-
         }
         return foundNewspaper;
     }
