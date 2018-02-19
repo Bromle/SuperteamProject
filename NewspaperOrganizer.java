@@ -21,19 +21,23 @@ public class NewspaperOrganizer
      * Adds a newspaper to the newspaperorganizer.
      * @param newspaper The newspaper to add
      */
-    public void addnewspaper(Newspaper newspaper)
+    public void addNewspaper(Newspaper newspaper)
     {
         this.listOfNewsPapers.add(newspaper);
     }
     
     /**
-     * 
+     * Removes a newspaper from the list.
+     * @param index Index of the newspaper to remove. Remember 0 is the first paper.
      */
     public void removeNewspaper(int index)
     
     {
-        
+        this.listOfNewsPapers.remove(index);
     }
+    
+    
+    
     
     /**
      * Find and return the newspaper with a name matching the parameter name.
@@ -54,5 +58,19 @@ public class NewspaperOrganizer
 
         }
         return foundNewspaper;
+    }
+    
+    public void addSomePapers() 
+    {
+        addNewspaper(new Newspaper("Sunnmørsposten", 1, 1, "01/06/1984,", 30));
+        addNewspaper(new Newspaper("Sunnmørsposten", 2, 1, "07/06/1984,", 30));
+        addNewspaper(new Newspaper("Sunnmørsposten", 3, 1, "14/06/1984,", 30));
+        addNewspaper(new Newspaper("Sunnmørsposten", 4, 1, "21/06/1984,", 30));
+        addNewspaper(new Newspaper("Sunnmørsposten", 5, 1, "28/06/1984,", 30));
+        addNewspaper(new Newspaper("Fride's avis", 1, 1, "05/01/2004,", 7));
+        addNewspaper(new Newspaper("Fride's avis", 2, 3, "23/01/2006,", 3));
+        addNewspaper(new Newspaper("Fride's avis", 5, 4, "28/06/2007,", 30));
+        addNewspaper(new Newspaper("Fride's avis", 6, 6, "28/06/2009,", 23));
+        addNewspaper(new Newspaper("Fride's avis", 10, 111, "28/06/2115,", 1));
     }
 }
