@@ -56,6 +56,9 @@ public class NewspaperOrganizer
         return foundNewspaper;
     }
     
+    /**
+     * adds some newspapers to the newspaper list.
+     */
     public void addSomePapers() 
     {
         addNewspaper(new Newspaper("Sunnmørsposten", 1, 1, "01/06/1984,", 30));
