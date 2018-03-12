@@ -131,7 +131,8 @@ public class NewspaperOrganizer
      */
     public void addNewspaper(Newspaper newspaper)
     {
-        System.out.print("");
+        System.out.print("Enter the ");
+        
         
     }
     
