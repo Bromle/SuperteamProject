@@ -11,16 +11,17 @@ public class NewspaperOrganizer
     // An Arraylist for storing objects of class Newspaper.
     private ArrayList<Newspaper> listOfNewsPapers;
     private String[] menuItems = {
-        "1. List all products",
-        "2. Add new product",
-        "3. Find a product by name",
+        "1. List all newspapers",
+        "2. Add new newspaper",
+        "3. Find a newspaper by name",
     };
     
     /**
-     * Creates an instance of the ApplicationUI User interface. 
+     * Constructor for objects of class NewspaperOrganizer
      */
-    public NewspaperOrganizer() 
+    public NewspaperOrganizer()
     {
+        this.listOfNewsPapers = new ArrayList<Newspaper>();
     }
     
     /**
@@ -41,7 +42,7 @@ public class NewspaperOrganizer
                 switch (menuSelection) 
                 {
                     case 1:
-                        this.listAllProducts();
+                        this.listAllNewspapers();
                         break;
 
                     case 2:
@@ -100,14 +101,6 @@ public class NewspaperOrganizer
     }
     
     /**
-     * Constructor for objects of class NewspaperOrganizer
-     */
-    public NewspaperOrganizer()
-    {
-        this.listOfNewsPapers = new ArrayList<Newspaper>();
-    }
-    
-    /**
      * Initializes the application.
      * Typically you would create the LiteratureRegistrer-instance here
      */
@@ -119,7 +112,7 @@ public class NewspaperOrganizer
     /**
      * Lists all the products/literature in the register
      */
-    void listAllProducts()
+    void listAllNewspapers()
     {
         System.out.println("listAllProducts() was called");
     }
