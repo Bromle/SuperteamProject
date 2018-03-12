@@ -1,7 +1,7 @@
 
 /**
  * Store details of a newspaper,
- * such as name, date/year, pages, newspaperNumber, vintage
+ * such as name, date/year, pages, newspaperNumber.
  *
  * @author Geir Kvenseth, Fride frøland, Helene Rasmussen
  * @version (12.02.2018)
@@ -11,7 +11,6 @@ public class Newspaper
     // instance variables - replace the example below with your own
     private String name;
     private int issueNumber;
-    private int vintage;
     private String date;
     private int numberOfPages;
 
@@ -19,16 +18,14 @@ public class Newspaper
      * Constructor for objects of class Newspaper
      * @param name The newspapers name.
      * @param issueNumber The number of the paper.
-     * @param vintage Total year number since first published.
      * @param dateAndYear Date and year published.
      * @param numberOfPages Number of pages in the newspaper.
      */
     public Newspaper(String name, int issueNumber, 
-    int vintage, String date, int numberOfPages)
+     String date, int numberOfPages)
     {
         this.name = name;
         this.issueNumber = issueNumber;
-        this.vintage = vintage;
         this.date = date;
         this.numberOfPages = numberOfPages;
     }
@@ -44,7 +41,6 @@ public class Newspaper
     {
         this.name = name;
         this.issueNumber = issueNumber;
-        this.vintage = 0;
         this.date = date;
         this.numberOfPages = 0;
     }
@@ -66,16 +62,7 @@ public class Newspaper
     {
         return this.issueNumber;
     }
-    
-    /**
-     * Returns vintage.
-     * @returns vintage The Vintage.
-     */
-    public int getVintage()
-    {
-        return this.vintage;
-    }
-    
+
     /**
      * Return date.
      * @return date The newspaper date.
@@ -94,6 +81,11 @@ public class Newspaper
         return this.numberOfPages;
     }
     
+    public String getInfoAsString()
+    {
+        return getName() + getIssueNumber() + getDate() + getNumberOfPages();
+    }
+    
     /**
      * Sets the name of the paper.
      * @param name The name of the paper.
@@ -110,15 +102,6 @@ public class Newspaper
     private void setIssueNumber(int issueNumber)
     {
         this.issueNumber = issueNumber;
-    }
-    
-    /**
-     * Sets the vintage.
-     * @param vintage The vintage of the paper. 
-     */
-    private void setVintage(int vintage)
-    {
-        this.vintage = vintage;
     }
     
     /**

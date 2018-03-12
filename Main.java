@@ -14,7 +14,7 @@ public class Main
      */
     public static void main(String[] args)
     {
-        NewspaperOrganizer appUI = new NewspaperOrganizer();
+        UserInterface appUI = new UserInterface();
         appUI.start();
     }
 }
