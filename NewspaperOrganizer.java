@@ -27,8 +27,8 @@ public class NewspaperOrganizer
     public void listAllNewspapers()
     {
         if(this.listOfNewsPapers.size() > 0){
+            System.out.println("The newspapers in stock are");
             for(Newspaper n : this.listOfNewsPapers){
-                System.out.println("The newspapers in stock are");
                 System.out.println(n.getName());
             }
         }
@@ -49,7 +49,7 @@ public class NewspaperOrganizer
         System.out.println("Enter the date of publishing: ");
         String date = inputScanner.nextLine();
 
-        System.out.print("Enter the number of pages in the newpaper: ");
+        System.out.println("Enter the number of pages in the newpaper: ");
         int numberOfPages = inputScanner.nextInt();
 
         System.out.println("Enter the issuenumber: ");

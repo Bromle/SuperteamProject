@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 public class UserInterface
 {
-    NewspaperOrganizer newspaperOrganizer;
+    private NewspaperOrganizer newspaperOrganizer;
     private String[] menuItems = {
             "1. List all newspapers",
             "2. Add new newspaper",
