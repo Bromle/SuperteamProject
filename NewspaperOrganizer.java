@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.InputMismatchException;
-import java.util.Scanner;
+import java.util.Iterator;
 /**
  * Represents a collections of newspapers.
  * @author Geir Kvenseth, Fride frøland, Helene Rasmussen
@@ -10,7 +10,6 @@ public class NewspaperOrganizer
 {
     // An Arraylist for storing objects of class Newspaper.
     private ArrayList<Newspaper> listOfNewsPapers;
-    private Scanner inputScanner;
 
     /**
      * Constructor for objects of class NewspaperOrganizer
@@ -18,43 +17,25 @@ public class NewspaperOrganizer
     public NewspaperOrganizer()
     {
         this.listOfNewsPapers = new ArrayList<Newspaper>();
-        inputScanner = new Scanner(System.in);
     }
-
-    /**
-     * Lists all the products/literature in the register
-     */
-    public void listAllNewspapers()
+    
+    public Iterator<Newspaper> iterator()
     {
-        if(this.listOfNewsPapers.size() > 0){
-            System.out.println("The newspapers in stock are");
-            for(Newspaper n : this.listOfNewsPapers){
-                System.out.println(n.getName());
-            }
-        }
-        else {
-            System.out.println("There are no newspaper in stock");
-        }
+        return listOfNewsPapers.iterator();
     }
-
+    
+    public int listOfNewspapersSize()
+    {
+        return this.listOfNewsPapers.size();
+    }
+    
     /**
      * Adds a newspaper to the newspaperorganizer.
      * @param newspaper The newspaper to add
      */
-    public void addNewspaper()
+    public void addNewspaper(String name, int issueNumber, String date,
+                                int numberOfPages)
     {
-        System.out.println("Enter the name: ");
-        String name = inputScanner.nextLine();
-
-        System.out.println("Enter the date of publishing: ");
-        String date = inputScanner.nextLine();
-
-        System.out.println("Enter the number of pages in the newpaper: ");
-        int numberOfPages = inputScanner.nextInt();
-
-        System.out.println("Enter the issuenumber: ");
-        int issueNumber = inputScanner.nextInt();
-
         listOfNewsPapers.add(new Newspaper(name, issueNumber, date, numberOfPages));
     }
 
@@ -66,25 +47,5 @@ public class NewspaperOrganizer
 
     {
         this.listOfNewsPapers.remove(index);
-    }
-
-    /**
-     * Find and return the newspaper with a name matching the parameter name.
-     * @param name The name of the newspaper to search for.
-     */
-    public void findNewspaperByName()
-    {
-        System.out.println("Enter the name: ");
-        String searchString = inputScanner.nextLine();
-        System.out.println();
-        int index = 0;
-        while (index < this.listOfNewsPapers.size())
-        {
-            Newspaper n = this.listOfNewsPapers.get(index++);
-            if (n.getName().equalsIgnoreCase(searchString))
-            {
-                System.out.println(n.getName());
-            }
-        }
     }
 }

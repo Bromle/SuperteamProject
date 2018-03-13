@@ -1,5 +1,7 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.Iterator;
+import java.util.ArrayList;
 
 /**
  * Write a description of class UserInterface here.
@@ -14,7 +16,7 @@ public class UserInterface
             "1. List all newspapers",
             "2. Add new newspaper",
             "3. Find a newspaper by name",
-            "4. List all newspapers",
+            "4. For later use",
         };
 
     public UserInterface()
@@ -40,19 +42,15 @@ public class UserInterface
                 switch (menuSelection) 
                 {
                     case 1:
-                    newspaperOrganizer.listAllNewspapers();
+                    this.listAllNewspapers();
                     break;
 
                     case 2:
-                    newspaperOrganizer.addNewspaper();
+                    addNewspaper();
                     break;
 
                     case 3:
-                    newspaperOrganizer.findNewspaperByName();
-                    break;
-                    
-                    case 4:
-                    newspaperOrganizer.listAllNewspapers();
+                    this.findNewspaperByName();
                     break;
 
                     case 5:
@@ -111,4 +109,69 @@ public class UserInterface
         return menuSelection;
     }
 
+    /**
+     * Adds a newspaper to the newspaperorganizer.
+     * @param newspaper The newspaper to add
+     */
+    public void addNewspaper()
+    {
+        Scanner inputScanner = new Scanner(System.in);
+        
+        System.out.println("Enter the name: ");
+        String name = inputScanner.nextLine();
+
+        System.out.println("Enter the date of publishing: ");
+        String date = inputScanner.nextLine();
+
+        System.out.println("Enter the number of pages in the newpaper: ");
+        int numberOfPages = inputScanner.nextInt();
+
+        System.out.println("Enter the issuenumber: ");
+        int issueNumber = inputScanner.nextInt();
+
+        newspaperOrganizer.addNewspaper(name, issueNumber, date, numberOfPages);
+    }
+
+    /**
+     * Lists all the products/literature in the register
+     */
+    public void listAllNewspapers()
+    {
+        Iterator<Newspaper> it = newspaperOrganizer.iterator();
+        if (!it.hasNext())
+        {
+            System.out.println("There are no newspapers in stock!");
+        }
+        else
+        {
+            System.out.println("Newspapers in stock are:");
+            while(it.hasNext()){
+                Newspaper n = it.next();
+                System.out.println(n.getName());
+            }
+        }
+    }
+
+    /**
+     * Find and return the newspaper with a name matching the parameter name.
+     * @param name The name of the newspaper to search for.
+     */
+    public void findNewspaperByName()
+    {
+        Scanner inputScanner = new Scanner(System.in);
+        
+        System.out.println("Enter the name:");
+        String searchString = inputScanner.nextLine();
+        System.out.println();
+
+        Iterator<Newspaper> it = newspaperOrganizer.iterator();
+        while (it.hasNext())
+        {
+            Newspaper n = it.next();
+            if (n.getName().equalsIgnoreCase(searchString))
+            {
+                System.out.println(n.toString());
+            }
+        }
+    }
 }

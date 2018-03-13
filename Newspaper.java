@@ -121,4 +121,22 @@ public class Newspaper
     {
         this.numberOfPages = numberOfPages;
     }
+    
+    public String toString()
+    {
+        String returnString = name;
+        returnString += "\nIssuenumber: " + issueNumber;
+        returnString += "\nDate: " + date;
+        returnString += "\nPages: " + numberOfPages;
+        return returnString;
+    }
 }
+
+
+
+
+
+
+
+
+

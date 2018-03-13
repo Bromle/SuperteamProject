@@ -41,10 +41,18 @@ public class NewspaperOrganizerTest
     }
 
     @Test
-    public void testListallNewspapers()
+    public void testAddNewsPaper()
     {
-        NewspaperOrganizer newspape2 = new NewspaperOrganizer();
-        newspape2.listAllNewspapers();
+        NewspaperOrganizer newspape1 = new NewspaperOrganizer();
+        newspape1.addNewspaper("Smp", 5, "01.02.18", 30);
+    }
+
+    @Test
+    public void testAddNewsPaperNegative()
+    {
+        NewspaperOrganizer newspape1 = new NewspaperOrganizer();
+        newspape1.addNewspaper("5", -6, "sdfsdf<", -50);
     }
 }
+
 
